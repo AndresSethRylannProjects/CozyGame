@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+    public Rigidbody2D body;
+    public SpriteRenderer spriteRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {
