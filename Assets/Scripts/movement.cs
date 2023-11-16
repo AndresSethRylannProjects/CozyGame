@@ -12,6 +12,10 @@ public class movement : MonoBehaviour
     public List<Sprite> southSprites;
     public List<Sprite> southEastSprites;
     public List<Sprite> eastSprites;
+    public float walkSpeed;
+    public float frameRate;
+    Vector2 direction;
+
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,6 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
     }
 }
