@@ -28,6 +28,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!PauseMenu.isPaused){
         direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical")).normalized;
 
         body.velocity = direction * walkSpeed;
@@ -36,6 +37,7 @@ public class movement : MonoBehaviour
         HandleSpriteFlip();
 
         SetSprite();
+        }
 
     }
 
