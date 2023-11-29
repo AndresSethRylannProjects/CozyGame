@@ -15,6 +15,7 @@ public class movement : MonoBehaviour
     public List<Sprite> eastSprites;
     public float walkSpeed;
     public float frameRate;
+    public ParticleSystem dust;
     float idleTime;
     Vector2 direction;
 
@@ -58,10 +59,12 @@ public class movement : MonoBehaviour
         // if we are facing right and player holds left flip
          if (!spriteRenderer.flipX && direction.x < 0) {
             spriteRenderer.flipX = true;
+            dust.Play();
         }
         // inverse
         else if (spriteRenderer.flipX && direction.x > 0) {
             spriteRenderer.flipX = false;
+            dust.Play();
         }
     }
 
