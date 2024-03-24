@@ -36,17 +36,16 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
     public void GoToMainMenu(){
-        Time.timeScale = 1f;
-        // works if we have a MainMenu scene in build settings
-
-        // for now using it as another resume game
-        pauseMenu.SetActive(false);
-        // ^^^^ delete above
-
-        // SceneManager.LoadScene("MainMenu")
+        // un pause the game
         isPaused = false;
+        Time.timeScale = 1f;
+
+        // go to main menu
+        SceneManager.LoadScene("MainMenu");
     }
     public void QuitGame(){
+        // log message to console
+        Debug.Log("Quitting game...");
         Application.Quit();
     }
 }
