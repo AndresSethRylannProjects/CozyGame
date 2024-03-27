@@ -17,7 +17,7 @@ public class PomodoroTimer : MonoBehaviour
     }
 
     // start timer
-    public void startTimer(){
+    public void startTimer(int time){
         
         if(!hasFinished){
             // ask user if they are sure they want to reset the timer
@@ -26,10 +26,31 @@ public class PomodoroTimer : MonoBehaviour
         }
         else {
             // start timer
-            remainingTime = 3600;
             tick = true;
             // make timer text visible
             timerText.gameObject.SetActive(true);
+
+            // set remaining time based on user input
+            switch(time){
+            case 10:
+                remainingTime = 600;
+                break;
+            case 15:
+                remainingTime = 900;
+                break;
+            case 30:
+                remainingTime = 1800;
+                break;
+            case 45:
+                remainingTime = 2700;
+                break;
+            case 60:
+                remainingTime = 3600;
+                break;
+            default:
+                remainingTime = 3600;
+                break;
+        }
         }
     }
 
